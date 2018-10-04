@@ -19,12 +19,12 @@ $names = $query->fetchAll(PDO::FETCH_OBJ);
 
 if ($_POST) {
 	echo 'inpost';
-	if ($_POST['firstName']) {
-		$firstName = $_POST['firstName'];
+	if ($_POST['first_name']) {
+		$firstName = $_POST['first_name'];
 	}
 
-	if ($_POST['lastName']) {
-		$lastName = $_POST['lastName'];
+	if ($_POST['last_name']) {
+		$lastName = $_POST['last_name'];
 	}
 
 	if ($lastName && $firstName) {
