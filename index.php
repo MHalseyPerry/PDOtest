@@ -8,22 +8,11 @@ $pass = '';
 
 try {
 	$db = new PDO('mysql:host=localhost;dbname=people', $user, $pass);
-	/*
-	You weren't getting any errors because PDO defaults to silent error reporting
-	i.e. ignoring errors and not telling you anything.
-
-	See http://php.net/manual/en/pdo.setattribute.php for the function docs
-	See http://php.net/manual/en/pdo.error-handling.php for the different modes you can choose
-	*/
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
 	die($e->getMessage());
 }
 
-$query = $db->prepare('SELECT * FROM names');
-$query->execute();
-
-$names = $query->fetchAll(PDO::FETCH_OBJ);
 
 if ($_POST) {
 	echo 'inpost';
@@ -66,5 +55,10 @@ if ($_POST) {
 		return false;
 	}
 }
+
+$query = $db->prepare('SELECT * FROM names');
+$query->execute();
+
+$names = $query->fetchAll(PDO::FETCH_OBJ);
 
 require 'index.view.php';
