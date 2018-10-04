@@ -7,7 +7,7 @@ $user = 'root';
 $pass = '';
 
 try {
-	$db = new PDO('mysql:host=localhost;dbname=pdo_test', $user, $pass);
+	$db = new PDO('mysql:host=localhost;dbname=people', $user, $pass);
 	/*
 	You weren't getting any errors because PDO defaults to silent error reporting
 	i.e. ignoring errors and not telling you anything.
