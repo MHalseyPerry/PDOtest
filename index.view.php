@@ -5,11 +5,21 @@
     </head>
 
     <body>
-        <ul>
-            <?php foreach ($names as $names): ?>
-                <li><?= "$names->first_name $names->last_name" ?></li>
-            <?php endforeach; ?>
-        </ul>
+        <table style="width:50% "border=1">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+
+             <?php foreach ($names as $name): ?>
+             <tr>
+                <td><?="$name->id"?></td>
+                <td><?="$name->first_name"?></td>
+                <td><?="$name->last_name"?></td>
+             </tr>
+             <?php endforeach; ?>
+        </table>
 
         <a href="create-new.php">Add Entry!</a>
     </body>
