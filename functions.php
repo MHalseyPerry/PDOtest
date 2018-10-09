@@ -1,6 +1,6 @@
 <?php
 
-function connecttoDB($user, $pass)
+function connectToDB($user, $pass)
 {
     try {
         return new PDO('mysql:host=localhost;dbname=people', $user, $pass);  // Try catch statement connects to database into $db var

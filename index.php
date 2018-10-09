@@ -5,7 +5,7 @@ require 'functions.php';
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-$db = connecttoDB('root', '');
+$db = connectToDB('root', '');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $names = fetchAll($db);
