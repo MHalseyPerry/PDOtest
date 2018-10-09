@@ -1,6 +1,6 @@
 <?php
 
-function connectToDB($user, $pass)
+function connectToDB($user='root', $pass='')
 {
     try {
         return new PDO('mysql:host=localhost;dbname=people', $user, $pass);  // Try catch statement connects to database into $db var
@@ -37,7 +37,21 @@ function addEntry($db, $firstName, $lastName)
     }
 }
 
-function deleteEntry($db, $firstName, $lastName)
+function deleteEntry($db, $id)
 {
+    if($id){
+        try {
+            $query = $db->prepare("DELETE FROM names WHERE id = :id");
+            $query->execute([
+                'id'=>$id,
+            ]);
+
+            return true;
+        }catch (Exception $e){
+            return false;
+        }
+    } else {
+        return false;
+    }
 
 }
