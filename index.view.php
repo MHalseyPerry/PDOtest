@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,6 +22,6 @@
              <?php endforeach; ?>
         </table>
 
-        <a href="create-new.php">Add Entry!</a>
+        <a href="form.view.php">Add Entry/Delete Entry</a>
     </body>
 </html>
