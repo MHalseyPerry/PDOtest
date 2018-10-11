@@ -3,8 +3,11 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 require 'functions.php';
+require 'QueryBuilder.php';
 $db = connectToDB();
-$people = fetchAll($db);
+
+$query = new QueryBuilder($db);
+$people = $query->fetchAll('names');
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +17,7 @@ $people = fetchAll($db);
     </head>
 
     <body>
-        <form action="add_entry.php" method="POST">
+        <form action="form_logic.php" method="POST">
             <h4 style="margin-bottom:4px"> ADD FORM </h4>
 
             <label for="first_name">First Name:</label>
@@ -30,14 +33,10 @@ $people = fetchAll($db);
             <br>
             <br>
 
-            <input type="submit" value="Create This Entry!"/>
+            <input type="submit" value="Create This Entry!" name='add' value='add'/>
         </form>
 
-
-
-
-
-        <form action="delete_entry.php" method="POST">
+        <form action="form_logic.php" method="POST" >
             <h4 style="margin-bottom:4px"> DELETE FORM </h4>
             <select name="person_id">
                 <?php foreach ($people as $person): ?>
@@ -47,7 +46,7 @@ $people = fetchAll($db);
                 <?php endforeach; ?>
             </select>
 
-            <input type="submit" value="Delete This Entry!"/>
+            <input type="submit" value="Delete This Entry!" name='delete' value='delete'/>
         </form>
     </body>
 </html>
