@@ -1,13 +1,13 @@
 <?php
-
 require 'functions.php';
-$db = connectToDB();
+require 'QueryBuilder.php';
+$db = new QueryBuilder('root','');
 
-if($_POST['delete']) {
+if(isset($_POST['delete'])) {
 
     $id = $_POST['person_id'] ?? false;
 
-    $successful = deleteEntry($db, $id);
+    $successful = $db->deleteEntry($db, $id);
 
 
     if ($successful) {
@@ -18,11 +18,11 @@ if($_POST['delete']) {
     }
 }
 
-if ($_POST['add']) {
+if (isset($_POST['add'])) {
     $firstName = $_POST['first_name'] ?? false;
     $lastName = $_POST['last_name'] ?? false;
 
-    $successful = addEntry($db, $firstName, $lastName);
+    $successful = $db->addEntry($db, $firstName, $lastName);
 
     if ($successful) {
         header("Location: /index.php");

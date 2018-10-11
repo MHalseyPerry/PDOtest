@@ -4,10 +4,9 @@ error_reporting(E_ALL);
 
 require 'functions.php';
 require 'QueryBuilder.php';
-$db = connectToDB();
 
-$query = new QueryBuilder($db);
-$people = $query->fetchAll('names');
+$db = new QueryBuilder('root','');
+$people = $db->fetchAll('names');
 ?>
 
 <!DOCTYPE html>
