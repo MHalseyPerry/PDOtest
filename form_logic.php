@@ -30,5 +30,3 @@ if ($_POST['add']) {
         echo 'fail';
     }
 }
-
-?>
