@@ -10,12 +10,7 @@ function connectToDB($user='root', $pass='')
     }
 }
 
-function fetchAll($db)
-{
-    $query = $db->prepare('SELECT * FROM names');
-    $query->execute();
-    return $query->fetchAll(PDO::FETCH_OBJ);
-}
+
 
 
 function addEntry($db, $firstName, $lastName)
