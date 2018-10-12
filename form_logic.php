@@ -1,5 +1,4 @@
 <?php
-require 'functions.php';
 require 'QueryBuilder.php';
 $db = new QueryBuilder('root','');
 

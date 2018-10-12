@@ -2,7 +2,6 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-require 'functions.php';
 require 'QueryBuilder.php';
 
 $db = new QueryBuilder('root','');
