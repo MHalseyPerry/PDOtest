@@ -9,6 +9,6 @@ error_reporting(E_ALL);
 
 
 $db = new QueryBuilder('root','');
-$names = $db->fetchAll('names');
+$persons = $db->fetchAll('people');
 
 require 'index.view.php';

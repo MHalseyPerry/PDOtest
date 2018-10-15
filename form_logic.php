@@ -2,26 +2,25 @@
 require 'QueryBuilder.php';
 $db = new QueryBuilder('root','');
 
-if(isset($_POST['delete'])) {
 
-    $id = $_POST['person_id'] ?? false;
+if (isset($_POST['add'])) {
+    $firstName = $_POST['first_name'] ?? false;
+    $lastName = $_POST['last_name'] ?? false;
 
-    $successful = $db->deleteEntry($db, $id);
-
+    $successful = $db->addEntry($firstName, $lastName);
 
     if ($successful) {
-
         header("Location: /index.php");
     } else {
         echo 'fail';
     }
 }
 
-if (isset($_POST['add'])) {
+if (isset($_POST['edit'])) {
     $firstName = $_POST['first_name'] ?? false;
     $lastName = $_POST['last_name'] ?? false;
-
-    $successful = $db->addEntry($db, $firstName, $lastName);
+    $id = $_POST['id'];
+    $successful = $db->editEntry($id,$firstName, $lastName);
 
     if ($successful) {
         header("Location: /index.php");

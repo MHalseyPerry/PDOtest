@@ -11,13 +11,17 @@
                 <th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
 
-             <?php foreach ($names as $name): ?>
+             <?php foreach ($persons as $person): ?>
                 <tr>
-                    <td><?="$name->id"?></td>
-                    <td><?="$name->first_name"?></td>
-                    <td><?="$name->last_name"?></td>
+                    <td><?="$person->id"?></td>
+                    <td><?="$person->first_name"?></td>
+                    <td><?="$person->last_name"?></td>
+                    <td><a href="/edit.php?person=<?=$person->id?>">Edit</a></td>
+                    <td><a href="/delete.php?person=<?=$person->id?>">Delete</a></td>
                 </tr>
              <?php endforeach; ?>
         </table>
