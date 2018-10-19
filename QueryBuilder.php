@@ -1,12 +1,18 @@
 <?php
+require 'config.php';
 
 class QueryBuilder
 {
 
-    public function __construct($user,$pass)
+    public function __construct($config)
     {
         try {
-            $this->db = new PDO('mysql:host=localhost;dbname=employees', $user, $pass);  // Try catch statement connects to database into $db var
+            $this->db = new PDO(
+                $config['connection'].';dbname=' .$config['name'],
+                $config['username'],
+                $config['password'],
+                $config['options']
+            );
             echo'connected';
         } catch (PDOException $e) {
             die($e->getMessage());
