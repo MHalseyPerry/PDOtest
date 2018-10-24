@@ -6,6 +6,6 @@ if (!$id) {
     die('A person is required!');
 }
 
-$person = $query->selectOne('people', $id);
+$person = $query->select('people', $id);
 
 require 'views/edit.view.php';

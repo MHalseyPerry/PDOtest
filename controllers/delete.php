@@ -1,7 +1,7 @@
 <?php
 
 $id = Request::input('person');
-$successful = $query->deleteEntry($id);
+$successful = $query->delete('people', $id);
 
 if ($successful) {
     header('Location: /');
