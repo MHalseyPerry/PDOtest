@@ -1,6 +1,6 @@
 <?php
 
-$id = $_GET['person'] ?? false;
+$id = Request::input('person');
 
 if (!$id) {
     die('A person is required!');

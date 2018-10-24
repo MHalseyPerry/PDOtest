@@ -1,6 +1,6 @@
 <?php
 
-$id = $_GET['person'];
+$id = Request::input('person');
 $successful = $query->deleteEntry($id);
 
 if ($successful) {

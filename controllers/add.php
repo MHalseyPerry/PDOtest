@@ -1,7 +1,7 @@
 <?php
 
-$firstName = $_POST['first_name'] ?? false;
-$lastName = $_POST['last_name'] ?? false;
+$firstName = Request::input('first_name');
+$lastName = Request::input('last_name');
 
 $successful = $query->addEntry($firstName, $lastName);
 
