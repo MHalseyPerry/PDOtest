@@ -20,12 +20,12 @@
                     <td><?="$person->id"?></td>
                     <td><?="$person->first_name"?></td>
                     <td><?="$person->last_name"?></td>
-                    <td><a href="/edit.php?person=<?=$person->id?>">Edit</a></td>
-                    <td><a href="/delete.php?person=<?=$person->id?>">Delete</a></td>
+                    <td><a href="/edit?person=<?=$person->id?>">Edit</a></td>
+                    <td><a href="/delete?person=<?=$person->id?>">Delete</a></td>
                 </tr>
              <?php endforeach; ?>
         </table>
 
-        <a href="form.view.php">Add Entry/Delete Entry</a>
+        <a href="/add">Add Entry/Delete Entry</a>
     </body>
 </html>

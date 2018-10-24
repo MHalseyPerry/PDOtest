@@ -1,31 +1,27 @@
 <?php
-require 'config.php';
 
 class QueryBuilder
 {
+    protected $db;
 
-    public function __construct($config)
+    public function __construct($db)
     {
-        try {
-            $this->db = new PDO(
-                $config['connection'].';dbname=' .$config['name'],
-                $config['username'],
-                $config['password'],
-                $config['options']
-            );
-            echo'connected';
-        } catch (PDOException $e) {
-            die($e->getMessage());
-        }
-
+        $this->db = $db;
     }
 
 
-    public function fetchAll($table)
+    public function selectAll($table)
     {
         $query = $this->db->prepare("SELECT * FROM {$table}");
         $query->execute();
-        return $query->fetchAll(PDO::FETCH_OBJ);
+        return $query->fetchAll(PDO::FETCH_CLASS);
+    }
+
+    public function selectOne($table, $id)
+    {
+        $query = $this->db->prepare("SELECT * FROM {$table} WHERE id = :id");
+        $query->execute(['id' => $id]);
+        return $query->fetchObject();
     }
 
 

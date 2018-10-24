@@ -1,14 +1,14 @@
 <?php
 
-require 'QueryBuilder.php';
-$config = require 'config.php';
+$query = require 'core/bootstrap.php';
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+$router = new Router();
 
+$routes = require 'routes.php';
 
+$method = $_SERVER['REQUEST_METHOD'];
+$uri = explode('?', $_SERVER['REQUEST_URI'])[0];
 
-$db = new QueryBuilder($config['database']);
-$persons = $db->fetchAll('people');
+// die(var_dump($_SERVER));
 
-require 'index.view.php';
+require $router->direct($method, $uri);
