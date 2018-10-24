@@ -1,13 +1,3 @@
-<?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-require 'QueryBuilder.php';
-
-$db = new QueryBuilder('root','');
-$people = $db->fetchAll('names');
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +5,7 @@ $people = $db->fetchAll('names');
     </head>
 
     <body>
-        <form action="form_logic.php" method="POST">
+        <form action="/add" method="POST">
             <h4 style="margin-bottom:4px"> ADD ENTRY FORM </h4>
 
             <label for="first_name">First Name:</label>
