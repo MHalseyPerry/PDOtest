@@ -1,11 +1,5 @@
+<?php include"partials/header.php"; ?>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>NamesDB</title>
-    </head>
-
-    <body>
         <table style="width: 50%; border-collapse: collapse;" border="1">
             <tr>
                 <th>ID</th>
@@ -25,7 +19,8 @@
                 </tr>
              <?php endforeach; ?>
         </table>
-
         <a href="/add">Add Entry/Delete Entry</a>
-    </body>
-</html>
+
+        <?php include "partials/nav.php"; ?>
+
+<?php include"partials/footer.php"; ?>

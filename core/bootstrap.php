@@ -18,7 +18,7 @@ require 'core/database/QueryBuilder.php';
 $app = [];
 
 // Add the config into the array
-$app['config'] = require 'config.php';
+$app['config'] = require 'core/database/config.php';
 
 // Add the PDO connection to the array, passing it the database config
 // that we added to the array beforehand. Take a look at the Connection.php
