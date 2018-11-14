@@ -14,5 +14,6 @@ $router->post('/edit', 'controllers/edit.php'); // The logic that edits entries 
 
 $router->get('/delete', 'controllers/delete.php'); // The logic that delete entries
 
+
 $router->get('/contact', 'controllers/contact.php');
 $router->get('/about', 'controllers/about.php');

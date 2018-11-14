@@ -8,11 +8,8 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Then, require all of our classes that we're going to use.
-require 'core/Router.php';
-require 'core/Request.php';
-require 'core/database/Connection.php';
-require 'core/database/QueryBuilder.php';
+
+
 
 // We create the $app array, which will house all of our integral parts of the app.
 $app = [];

@@ -144,4 +144,29 @@ class QueryBuilder
             return false;
         }
     }
+
+    public function order($table, $column)
+    {
+        try {
+            // I can't remember what the problem is,,,?
+            // Nothing is changing, is it cause the selectall function is bein called everytime we go to index?
+            $query = $this->db->prepare("SELECT * FROM {$table} ORDER BY {$column} ASC");
+
+            // You need to return these results
+            $query->execute();
+
+            return $query->fetchAll(PDO::FETCH_CLASS);
+        } catch (Exception $e) {
+            die($e->getMessage());
+            return false;
+        }
+    }
 }
+
+//oh shit yheeeeeee
+// try now
+// okey bossmang
+// we are back to 0 errors but also 0 functionallity :D AHAHAHAH >:()
+// my work here is done, jake out
+
+// lmao in order controller do a var_dump of $persons, see what the fuck it is

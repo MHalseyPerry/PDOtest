@@ -9,6 +9,9 @@
  * everything we need into this file.
  */
 
+// Require composers autoload controller to add all classes
+require 'vendor/autoload.php';
+
 // First we need to pull in the bootstrap file, check
 // the comments in there to see whats happening.
 $app = require 'core/bootstrap.php';
