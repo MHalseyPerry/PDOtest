@@ -1,9 +1,9 @@
 <?php
 
-$orderBy = Request::input('order_by');
+
 
 // yeah you need to call the order function not the selectall function?
-$persons = $query->selectAll('people');
+$persons = App::get('builder')->selectAll('people');
 
 require 'views/index.view.php';
 

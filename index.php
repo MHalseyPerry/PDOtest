@@ -14,11 +14,11 @@ require 'vendor/autoload.php';
 
 // First we need to pull in the bootstrap file, check
 // the comments in there to see whats happening.
-$app = require 'core/bootstrap.php';
+require 'core/bootstrap.php';
 
 // We create an alias for $app['builder'] so we don't have to keep typing that out,
 // we can just type $query instead.
-$query = $app['builder'];
+$query = App::get('builder');
 
 // Now, we want to load our router and handle the current request.
 // Look at the Router class comments to see what's happening here.
