@@ -22,7 +22,7 @@ $query = App::get('builder');
 
 // Now, we want to load our router and handle the current request.
 // Look at the Router class comments to see what's happening here.
-require Router::load('routes.php')
+Router::load('routes.php')
     ->handle(
         // The handle method takes 2 parameters; the request method (GET, POST, etc.)
         // and the current URI (/add, /edit, etc.). We get these from the Request class.

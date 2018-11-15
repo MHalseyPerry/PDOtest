@@ -55,7 +55,9 @@ class Router
         // under the specified method.
         if (array_key_exists($uri, $this->routes[$method])) {
             // It has, so return the value for it, which will be the controller path.
-            return $this->routes[$method][$uri];
+            return $this->callAction(
+                ...explode('@', $this->routes[$method][$uri])
+            );
         }
 
         // We didn't find any routes, so throw an exception.
@@ -70,6 +72,21 @@ class Router
      * @param string $file This is a path to a file in which you define all of your routes.
      * @return self
      */
+
+    protected function callAction($controller, $action){
+
+        if(! method_exists($controller, $action)){
+            throw new Exception(
+                    "{$controller} does not respond to the {$action} action"
+            );
+        }
+
+        return(new $controller)->$action();
+
+    }
+
+
+
     public static function load($file)
     {
         // First, we create an instance of this class (self). This load() method is static,
