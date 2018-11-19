@@ -16,6 +16,8 @@ require 'vendor/autoload.php';
 // the comments in there to see whats happening.
 require 'core/bootstrap.php';
 
+use App\Core\{Router, Request, App};
+
 // We create an alias for $app['builder'] so we don't have to keep typing that out,
 // we can just type $query instead.
 $query = App::get('builder');

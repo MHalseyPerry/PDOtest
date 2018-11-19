@@ -7,6 +7,9 @@
  *
  * Each method has its own documentation.
  */
+namespace App\Core;
+
+
 
 class Request
 {

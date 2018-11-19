@@ -8,6 +8,8 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+use App\Core\App;
+
 
 App::bind('config', require 'core/database/config.php' );
 
